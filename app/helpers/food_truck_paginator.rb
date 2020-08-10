@@ -1,5 +1,3 @@
-# require 'colorize'
-
 class FoodTruckPaginator
   def call(food_trucks: [])
     handle_zero_results_error if food_trucks.empty?

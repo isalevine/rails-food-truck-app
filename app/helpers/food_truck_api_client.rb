@@ -1,5 +1,3 @@
-# require 'net/http'
-
 class FoodTruckApiClient
   def call(time: Time.now)
     url = URI.parse(create_query_url(time))
