@@ -30,11 +30,13 @@ class FoodTruckApiClient
     if res.code == "202"  # retry
       self.call
     else
-      error = JSON.parse(res.body)["message"]
-      ErrorHandler.call(
-        error_text: "Error in FoodTruckAPIClient: Call to API failed, returning the HTTP status code #{res.code} and the following error message: #{error}",
-        error_occurred: true
-      )
+      raise ApiCallFailedError
+      
+      # error = JSON.parse(res.body)["message"]
+      # ErrorHandler.call(
+      #   error_text: "Error in FoodTruckAPIClient: Call to API failed, returning the HTTP status code #{res.code} and the following error message: #{error}",
+      #   error_occurred: true
+      # )
     end
   end
 end
