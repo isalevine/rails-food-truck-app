@@ -1,7 +1,11 @@
 <h1>Hi! This is views/index/main.html.erb</h1>
 
-<% @paginated_food_trucks.each do |food_trucks| %>
-  <% food_trucks.each do |food_truck| %>
-    <%= "#{food_truck[:name]} #{food_truck[:address]}" %><br>
-  <% end %>
+<% @current_food_trucks.each do |food_truck| %>
+  <%= "#{food_truck[:name]} #{food_truck[:address]}" %><br>
+<% end %>
+
+<% if @next_trucks_length > 0 %>
+  <%= button_to "See next #{@next_trucks_length} food trucks", main_path(page: @current_page + 1) %>
+<% else %>
+  <h2>All open food trucks for the current hour have been displayed!</h2>
 <% end %>

@@ -1,5 +1,3 @@
-# require 'json'
-
 class FoodTruckDataParser
   def call(api_response: "")
     begin
