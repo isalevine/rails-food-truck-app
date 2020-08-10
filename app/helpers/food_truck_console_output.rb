@@ -1,4 +1,4 @@
-require 'colorize'
+# require 'colorize'
 
 class FoodTruckConsoleOutput
   def call(food_trucks: [])

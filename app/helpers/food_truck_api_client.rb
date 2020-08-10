@@ -1,6 +1,6 @@
-require 'net/http'
+# require 'net/http'
 
-class FoodTruckAPIClient
+class FoodTruckApiClient
   def call(time: Time.now)
     url = URI.parse(create_query_url(time))
     req = Net::HTTP::Get.new(url.to_s)

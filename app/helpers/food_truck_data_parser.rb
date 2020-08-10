@@ -1,4 +1,4 @@
-require 'json'
+# require 'json'
 
 class FoodTruckDataParser
   def call(api_response: "")
